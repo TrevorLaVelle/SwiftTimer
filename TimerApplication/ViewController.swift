@@ -91,8 +91,10 @@ class ViewController: UIViewController {
         
         switch (stopButtonTitleVariable) {
             case "Stop":
-                stopButtonTitleVariable = "Reset"
-                stopButton.setTitle(stopButtonTitleVariable, forState: UIControlState.Normal)
+                if (timeInMilliseconds > 0.000) {
+                    stopButtonTitleVariable = "Reset"
+                    stopButton.setTitle(stopButtonTitleVariable, forState: UIControlState.Normal)
+                }
                 break
             case "Reset":
                 timerLabel.text = "0.000"
