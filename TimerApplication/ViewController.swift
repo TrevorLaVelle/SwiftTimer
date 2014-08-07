@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var stopButtonTitleVariable: NSString = "Stop"
     var isPaused: Bool = false
     
+    var timerStarted = false
     
     let titleLabelRect = CGRectMake(10, 60, UIScreen.mainScreen().bounds.size.width - 20, 44)
     let timerLabelRect = CGRectMake(UIScreen.mainScreen().bounds.size.width/2 - 110, 120, 220, 44)
@@ -82,7 +83,10 @@ class ViewController: UIViewController {
         isPaused = false
         stopButtonTitleVariable = "Stop"
         stopButton.setTitle(stopButtonTitleVariable, forState: UIControlState.Normal)
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "updateTimerLabel", userInfo: nil, repeats: true)
+        if (!timerStarted){
+            NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "updateTimerLabel", userInfo: nil, repeats: true)
+            timerStarted = true
+        }
     }
     
     func stopTimer() {
