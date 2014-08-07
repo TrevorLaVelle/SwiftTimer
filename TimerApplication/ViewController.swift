@@ -33,18 +33,18 @@ class ViewController: UIViewController {
         return label
     }()
     
-    @lazy var timerLabel: UILabel = {
+    var timerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name:"Helvetica", size:44)
         return label
     }()
     
-    @lazy var startButton: UIButton = {
+    var startButton: UIButton = {
         let button = UIButton()
         return button
     }()
     
-    @lazy var stopButton: UIButton = {
+    var stopButton: UIButton = {
         let button = UIButton()
         return button
     }()
